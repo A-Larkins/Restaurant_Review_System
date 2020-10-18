@@ -16,7 +16,7 @@
     <title>Home</title>
 </head>
 <body>
-    <form id="frmHome" runat="server" aria-pressed="false">
+    <form id="frmHome" runat="server" aria-pressed="false" >
         <div class=" container">
             <nav class="navbar navbar-expand-sm bg-light justify-content-center">
                 <ul class="navbar-nav">
@@ -51,7 +51,16 @@
             </div>
         </div>
 
-        <asp:GridView ID="gvReviewDisplay" runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;">
+        <asp:GridView ID="gvReviewDisplay"  runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Reviewer_Name" HeaderText="Reviewer" />
+                <asp:BoundField DataField="Restaurant_Name" HeaderText="Restaurant" />
+                <asp:BoundField DataField="Food_Rating" HeaderText="Food Rating" />
+                <asp:BoundField DataField="Service_Rating" HeaderText="Service Rating" />
+                <asp:BoundField DataField="Atmosphere_Rating" HeaderText="Atmosphere Rating" />
+                <asp:BoundField DataField="Price_Rating" HeaderText="Price Rating" />
+                <asp:BoundField DataField="Comment" HeaderText="Comment" />
+            </Columns>
 
         </asp:GridView>
 

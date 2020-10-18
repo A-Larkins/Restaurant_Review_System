@@ -45,6 +45,36 @@
             </nav>
         </div>
 
+        <div class="container" style="text-align:center">
+            <div class="jumbotron" style="align-content: center">
+                <h1>Add A New Restaurant</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="form-group">
+                <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label>
+                <asp:TextBox ID="txtRestaurantName" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblCategory" runat="server" Text="Category:"></asp:Label>
+                <asp:DropDownList ID="ddlCategory" runat="server" class="form-control" DataTextField="Category">
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblImage" runat="server" Text="Image URL:"></asp:Label>
+                <asp:TextBox ID="txtImage" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblDescription" runat="server" Text="Description:"></asp:Label>
+                <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <asp:Button ID="btnAddRestaurant" runat="server" Text="Enter Restaurant" OnClick="btnAddRestaurant_Click" />
+            <div class="form-group">
+                <asp:Label ID="lblOutputMessage" runat="server" Visible="False"></asp:Label>
+            </div>
+        </div>
+
 
     </form>
 </body>

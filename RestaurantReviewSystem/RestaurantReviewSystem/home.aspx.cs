@@ -19,12 +19,19 @@ namespace RestaurantReviewSystem
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "GetReviews";
+            if (!IsPostBack)
+            {
 
-            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
-            gvReviewDisplay.DataSource = myDS;
-            gvReviewDisplay.DataBind();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "GetReviews";
+
+                DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+                gvReviewDisplay.DataSource = myDS;
+                gvReviewDisplay.DataBind();
+            }
+
+
+
 
         }
 
