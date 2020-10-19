@@ -13,7 +13,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
     
-    <title>Home</title>
+    <title>Reviews</title>
 </head>
 <body>
     <form id="frmHome" runat="server" aria-pressed="false" >
@@ -21,7 +21,10 @@
             <nav class="navbar navbar-expand-sm bg-light justify-content-center">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.aspx">Home</a>
+                        <a class="nav-link" href="home.aspx">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.aspx">Restaurants</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.aspx">Login</a>
@@ -47,7 +50,7 @@
 
         <div class="container" style="text-align:center">
             <div class="jumbotron" style="align-content: center">
-                <h1>Restaurant Review Display</h1>
+                <h1>Restaurant Reviews</h1>
             </div>
         </div>
 

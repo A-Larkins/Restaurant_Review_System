@@ -23,7 +23,10 @@
             <nav class="navbar navbar-expand-sm bg-light justify-content-center">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.aspx">Home</a>
+                        <a class="nav-link" href="home.aspx">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.aspx">Restaurants</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.aspx">Login</a>
