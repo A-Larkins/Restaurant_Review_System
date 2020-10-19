@@ -50,7 +50,7 @@
 
         <div class="container" style="text-align:center">
             <div class="jumbotron" style="align-content: center">
-                <h1>Restaurant Reviews</h1>
+                <h1>Reviews</h1>
             </div>
         </div>
 
@@ -66,6 +66,8 @@
             </Columns>
 
         </asp:GridView>
+
+        <br /><br /><br />
 
 
     </form>

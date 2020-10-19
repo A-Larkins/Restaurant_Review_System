@@ -50,7 +50,24 @@
             </nav>
         </div>
 
+        <div class="container" style="text-align:center">
+            <div class="jumbotron" style="align-content: center">
+                <h1>Restaurants</h1>
+            </div>
+        </div>
 
+        <asp:GridView ID="gvRestaurantDisplay"  runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Restaurant_Name" HeaderText="Name" />
+                <asp:BoundField DataField="Description" HeaderText="Description" />
+                <asp:BoundField DataField="Category" HeaderText="Category" />
+                <asp:BoundField HeaderText="Image" />
+                <asp:BoundField DataField="Representative" HeaderText="Representative" />
+            </Columns>
+
+        </asp:GridView>
+
+        <br /><br /><br />
 
     </form>
 </body>
