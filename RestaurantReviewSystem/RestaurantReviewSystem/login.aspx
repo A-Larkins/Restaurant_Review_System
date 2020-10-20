@@ -49,6 +49,69 @@
             </nav>
         </div>
 
+        <div class="container" style="text-align:center">
+            <div class="jumbotron" style="align-content: center">
+                <h1>Login</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="form-inline">
+                <div class="form-group">
+                    <asp:Label ID="lblLoginType" runat="server" Text="User Type: "></asp:Label>
+                    &nbsp;<asp:DropDownList ID="ddlLoginType" runat="server" Width="200px">
+                    <asp:ListItem Value="Reviewer">Reviewer</asp:ListItem>
+                    <asp:ListItem Value="Representative">Representative</asp:ListItem>
+                </asp:DropDownList>
+                </div>
+                <div class="form-group">
+                    &nbsp;
+                    <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label>
+                    &nbsp;<asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    &nbsp;<asp:Button ID="btnLogin" runat="server" Text="Login" />
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblUsernameMessage" runat="server" Visible="False"></asp:Label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-5"></div>
+        </div>
+
+        <div class="container" style="text-align:center">
+            <div class="jumbotron" style="align-content: center">
+                <h1>..Or Create New Username</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="form-inline">
+                <div class="form-group">
+                    <asp:Label ID="lblNewUserType" runat="server" Text="User Type: "></asp:Label>
+                    &nbsp;<asp:DropDownList ID="ddlNewUserType" runat="server" Width="200px">
+                    <asp:ListItem Value="Reviewer">Reviewer</asp:ListItem>
+                    <asp:ListItem Value="Representative">Representative</asp:ListItem>
+                </asp:DropDownList>
+                </div>
+                <div class="form-group">
+                    &nbsp;
+                    <asp:Label ID="lblNewUsername" runat="server" Text="Username: "></asp:Label>
+                    &nbsp;<asp:TextBox ID="txtNewUsername" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    &nbsp;<asp:Button ID="btnNewUsername" runat="server" Text="Create" OnClick="btnNewUsername_Click" />
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblNewUsernameMessage" runat="server" Visible="False"></asp:Label>
+                </div>
+            </div>
+        </div>
+        
+
 
     </form>
 </body>
