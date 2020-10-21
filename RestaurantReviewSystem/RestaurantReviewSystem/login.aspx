@@ -70,7 +70,7 @@
                     &nbsp;<asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    &nbsp;<asp:Button ID="btnLogin" runat="server" Text="Login" />
+                    &nbsp;<asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
                 </div>
                 <div class="form-group">
                     <asp:Label ID="lblUsernameMessage" runat="server" Visible="False"></asp:Label>

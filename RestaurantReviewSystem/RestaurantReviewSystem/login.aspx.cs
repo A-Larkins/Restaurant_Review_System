@@ -54,6 +54,95 @@ namespace RestaurantReviewSystem
             }
 
         }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            String userType = ddlLoginType.SelectedValue;
+            String username = txtUsername.Text;
+            Session.Add("userType", "");
+            Session.Add("username", "");
+
+            if (userType == "Reviewer")
+            {
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "GetReviewerUserName";
+                SqlParameter inputParameter = new SqlParameter("@Username", username);
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.VarChar;
+                objCommand.Parameters.Add(inputParameter);
+
+                DataSet objDS = objDB.GetDataSetUsingCmdObj(objCommand);
+
+                if (objDS == null || objDS.Tables.Count == 0 || objDS.Tables[0].Rows.Count == 0)
+                {
+                    lblUsernameMessage.Visible = true;
+                    lblUsernameMessage.Text = "Username is not in database.";
+                }
+                else
+                {
+                    Session["username"] = txtUsername.Text;
+                    Session["userType"] = ddlLoginType.SelectedValue;
+                    //Session["username"] = objDS.Tables[0].Rows[0][0].ToString();
+                    //Session["userType"] = objDS.Tables[0].Rows[0][1].ToString();
+                    lblUsernameMessage.Visible = true;
+                    lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString();                }
+
+                    //try
+                    //{
+                    //    lblUsernameMessage.Visible = true;
+                    //    lblUsernameMessage.Text = "Logged in as " + username;
+                    //    Session.Clear();
+                    //    Session["username"] = txtUsername.Text;
+                    //    Session["userType"] = ddlLoginType.SelectedValue;
+                    //}
+                    //catch 
+                    //{
+                    //    lblUsernameMessage.Visible = true;
+                    //    lblUsernameMessage.Text = "Username is not in database.";
+                    //}
+                }
+            else if (userType == "Representative")
+            {
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "GetRepresentativeUserName";
+                SqlParameter inputParameter = new SqlParameter("@Username", username);
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.VarChar;
+                objCommand.Parameters.Add(inputParameter);
+                DataSet objDS = objDB.GetDataSetUsingCmdObj(objCommand);
+
+                if (objDS == null || objDS.Tables.Count == 0 || objDS.Tables[0].Rows.Count == 0)
+                {
+                    lblUsernameMessage.Visible = true;
+                    lblUsernameMessage.Text = "Username is not in database.";
+                }
+                else
+                {
+                    Session["username"] = objDS.Tables[0].Rows[0][0].ToString();
+                    Session["userType"] = objDS.Tables[0].Rows[0][1].ToString();
+                    lblUsernameMessage.Visible = true;
+                    lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString();
+                }
+
+                //try
+                //{
+                //    lblUsernameMessage.Visible = true;
+                //    lblUsernameMessage.Text = "Logged in as " + username;
+                //    Session.Clear();
+                //    Session["username"] = txtUsername.Text;
+                //    Session["userType"] = ddlLoginType.SelectedValue;
+                //}
+                //catch
+                //{
+                //    lblUsernameMessage.Visible = true;
+                //    lblUsernameMessage.Text = "Username is not in database.";
+                //}
+            }
+            // put text box back to blank after  login
+            txtUsername.Text = "";
+
+        }
+
     }
 }
 
