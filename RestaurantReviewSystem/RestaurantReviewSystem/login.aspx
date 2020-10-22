@@ -56,7 +56,7 @@
         </div>
 
         <div class="container">
-            <div class="form-inline">
+            <div class="form-inline justify-content-center" >
                 <div class="form-group">
                     <asp:Label ID="lblLoginType" runat="server" Text="User Type: "></asp:Label>
                     &nbsp;<asp:DropDownList ID="ddlLoginType" runat="server" Width="200px">
@@ -73,7 +73,7 @@
                     &nbsp;<asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
                 </div>
                 <div class="form-group">
-                    <asp:Label ID="lblUsernameMessage" runat="server" Visible="False"></asp:Label>
+                    &nbsp;<asp:Label ID="lblUsernameMessage" runat="server" Visible="False"></asp:Label>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="container">
-            <div class="form-inline">
+            <div class="form-inline justify-content-center">
                 <div class="form-group">
                     <asp:Label ID="lblNewUserType" runat="server" Text="User Type: "></asp:Label>
                     &nbsp;<asp:DropDownList ID="ddlNewUserType" runat="server" Width="200px">
@@ -106,7 +106,7 @@
                     &nbsp;<asp:Button ID="btnNewUsername" runat="server" Text="Create" OnClick="btnNewUsername_Click" />
                 </div>
                 <div class="form-group">
-                    <asp:Label ID="lblNewUsernameMessage" runat="server" Visible="False"></asp:Label>
+                    &nbsp;<asp:Label ID="lblNewUsernameMessage" runat="server" Visible="False"></asp:Label>
                 </div>
             </div>
         </div>
