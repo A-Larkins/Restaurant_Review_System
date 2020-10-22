@@ -49,6 +49,43 @@
             </nav>
         </div>
 
+        <div class="container" style="text-align:center">
+            <div class="jumbotron" style="align-content: center">
+                <h1>Add Representative</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:Button ID="btnAddRepresentative" runat="server" CssClass="form-control" Width="400px"  Text="Add yourself to a restaurant." OnClick="btnAddRepresentative_Click" />
+                </div>
+            </div>
+            
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:DropDownList ID="ddlRestaurant" runat="server" CssClass="form-control" Width="200px" DataTextField="Restaurant_Name" Visible="False"></asp:DropDownList>
+
+                </div>
+            </div>        
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:Button ID="btnSubmit" runat="server" CssClass="form-control" Width="100px" Text="Submit" Visible="False" OnClick="btnSubmit_Click" />
+                </div>
+            </div> 
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:Button ID="btnDeleteRepresentative" runat="server" CssClass="form-control" Width="400px" Text="Remove yourself from a restaurant." OnClick="btnRemoveRepresentative_Click" />
+                </div>
+            </div>
+
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:Label ID="lblMessage" runat="server" Visible="False"></asp:Label>
+                </div>
+            </div>
+        </div>
+
 
     </form>
 </body>

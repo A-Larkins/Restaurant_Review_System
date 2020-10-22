@@ -105,8 +105,8 @@ namespace RestaurantReviewSystem
                 }
                 else
                 {
-                    Session["username"] = objDS.Tables[0].Rows[0][0].ToString();
-                    Session["userType"] = objDS.Tables[0].Rows[0][1].ToString();
+                    Session["username"] = txtUsername.Text;
+                    Session["userType"] = ddlLoginType.SelectedValue;
                     lblUsernameMessage.Visible = true;
                     lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString();
                 }
