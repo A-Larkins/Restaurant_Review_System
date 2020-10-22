@@ -49,6 +49,39 @@
             </nav>
         </div>
 
+        <div class="container" style="text-align:center">
+            <div class="jumbotron" style="align-content: center">
+                <h1>Reservations</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="form-group">
+                <asp:Label ID="lblRestaurant" runat="server" Text="Restaurant:"></asp:Label>
+                <asp:DropDownList ID="ddlRestaurant" runat="server" CssClass="form-control" Width="200px" DataTextField="Restaurant_Name"></asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblName" runat="server" Text="Your Name:"></asp:Label>
+                <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblDate" runat="server" Text="Enter Date In The Form MM/DD/YYYY:"></asp:Label>
+                <asp:TextBox ID="txtDate" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblTime" runat="server" Text="Enter Time In The Form 12:00PM:"></asp:Label>
+                <asp:TextBox ID="txtTime" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
+
+
+
 
     </form>
 </body>
