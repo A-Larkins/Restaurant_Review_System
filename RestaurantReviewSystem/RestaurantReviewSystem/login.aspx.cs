@@ -86,20 +86,7 @@ namespace RestaurantReviewSystem
                     //Session["userType"] = objDS.Tables[0].Rows[0][1].ToString();
                     lblUsernameMessage.Visible = true;
                     lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString();                }
-
-                    //try
-                    //{
-                    //    lblUsernameMessage.Visible = true;
-                    //    lblUsernameMessage.Text = "Logged in as " + username;
-                    //    Session.Clear();
-                    //    Session["username"] = txtUsername.Text;
-                    //    Session["userType"] = ddlLoginType.SelectedValue;
-                    //}
-                    //catch 
-                    //{
-                    //    lblUsernameMessage.Visible = true;
-                    //    lblUsernameMessage.Text = "Username is not in database.";
-                    //}
+                
                 }
             else if (userType == "Representative")
             {
@@ -124,19 +111,7 @@ namespace RestaurantReviewSystem
                     lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString();
                 }
 
-                //try
-                //{
-                //    lblUsernameMessage.Visible = true;
-                //    lblUsernameMessage.Text = "Logged in as " + username;
-                //    Session.Clear();
-                //    Session["username"] = txtUsername.Text;
-                //    Session["userType"] = ddlLoginType.SelectedValue;
-                //}
-                //catch
-                //{
-                //    lblUsernameMessage.Visible = true;
-                //    lblUsernameMessage.Text = "Username is not in database.";
-                //}
+                
             }
             // put text box back to blank after  login
             txtUsername.Text = "";

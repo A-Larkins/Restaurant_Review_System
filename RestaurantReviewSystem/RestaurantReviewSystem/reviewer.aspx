@@ -49,7 +49,49 @@
             </nav>
         </div>
 
+        <div class="container" style="text-align:center">
+            <div class="jumbotron" style="align-content: center">
+                <h1>Edit Reviews</h1>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="form-group" >
+                <div class="d-flex justify-content-center">
+                    <asp:Button ID="btnEditReviews" runat="server" Text="Edit Your Reviews" OnClick="btnEditReviews_Click" />
+                </div>
+            </div>
+            <div class="form-group" >
+                <div class="d-flex justify-content-center">
+                    <asp:GridView ID="gvEditReviews" runat="server" AutoGenerateColumns="False"
+                        OnRowEditing="gvEditReviews_RowEditing" OnRowCancelingEdit="gvEditReviews_RowCancelingEdit"
+                        OnRowUpdating="gvEditReviews_RowUpdating" OnRowDeleting="gvEditReviews_RowDeleting">
+                        <Columns>
 
+                            <asp:BoundField DataField="Id" HeaderText="Review ID" ReadOnly="true"/>
+                            <asp:BoundField DataField="Restaurant_Name" HeaderText="Restaurant Name" ReadOnly="true"/>
+                            <asp:BoundField DataField="Food_Rating" HeaderText="Food Rating" />
+                            <asp:BoundField DataField="Service_Rating" HeaderText="Service Rating" />
+                            <asp:BoundField DataField="Atmosphere_Rating" HeaderText="Atmosphere Rating" />
+                            <asp:BoundField DataField="Price_Rating" HeaderText="Price Rating" />
+                            <asp:BoundField DataField="Comment" HeaderText="Comment" />
+
+                            <asp:CommandField ButtonType="Button" HeaderText="Edit" ShowEditButton="True" />
+                            <asp:CommandField ButtonType="Button" HeaderText="Delete" ShowDeleteButton="True" />
+
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+
+
+        </div>
 
     </form>
 </body>
