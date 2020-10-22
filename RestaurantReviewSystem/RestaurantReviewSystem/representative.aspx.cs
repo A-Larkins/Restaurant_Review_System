@@ -76,6 +76,7 @@ namespace RestaurantReviewSystem
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "DeleteRepresentative";
                 objCommand.Parameters.AddWithValue("@Name", Session["username"].ToString());
+                objDB.DoUpdateUsingCmdObj(objCommand);
                 lblMessage.Text = "You have been removed as representative.";
             }
             else
