@@ -56,6 +56,8 @@
             </div>
         </div>
 
+       
+
         <asp:GridView ID="gvRestaurantDisplay"  runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="Restaurant_Name" HeaderText="Name" />

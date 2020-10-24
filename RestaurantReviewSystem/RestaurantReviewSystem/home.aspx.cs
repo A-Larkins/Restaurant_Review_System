@@ -21,6 +21,7 @@ namespace RestaurantReviewSystem
         {
             if (!IsPostBack)
             {
+                objCommand.Parameters.Clear();
 
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "GetReviews";
@@ -30,10 +31,93 @@ namespace RestaurantReviewSystem
                 gvReviewDisplay.DataBind();
             }
 
-
-
-
         }
 
+        protected void btnFilterByCategory_Click(object sender, EventArgs e)
+        {
+            objCommand.Parameters.Clear();
+
+            btnAddAnotherCategory.Visible = true;
+            ddlCategory2.Visible = false;
+            lblCategory2.Visible = false;
+            lblAllReviews.Visible = false;
+            lblCategory.Visible = true;
+            ddlCategory.Visible = true;
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetCategories";
+            DataSet CategoryDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            ddlCategory.DataSource = CategoryDS;
+            ddlCategory.DataBind();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetCategoryDisplay";
+
+            String category = ddlCategory.SelectedValue.ToString();
+
+            SqlParameter inputParameter = new SqlParameter("@Category", category);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(inputParameter);
+
+
+            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            gvReviewDisplay.DataSource = myDS;
+            gvReviewDisplay.DataBind();
+        }
+
+        protected void btnAddAnotherCategory_Click(object sender, EventArgs e)
+        {
+            objCommand.Parameters.Clear();
+
+            lblCategory2.Visible = true;
+            ddlCategory2.Visible = true;
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetCategories";
+            DataSet CategoryDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            ddlCategory2.DataSource = CategoryDS;
+            ddlCategory2.DataBind();
+        }
+
+        protected void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            ddlCategory.Visible = false;
+            ddlCategory2.Visible = false;
+            lblCategory.Visible = false;
+            lblCategory2.Visible = false;
+            lblAllReviews.Visible = true;
+
+            objCommand.Parameters.Clear();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetReviews";
+
+            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            gvReviewDisplay.DataSource = myDS;
+            gvReviewDisplay.DataBind();
+        }
+
+        protected void UpdateGVCategory(String category)
+        {
+            objCommand.Parameters.Clear();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetCategoryDisplay";
+
+            SqlParameter inputParameter = new SqlParameter("@Category", category);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(inputParameter);
+
+
+            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            gvReviewDisplay.DataSource = myDS;
+            gvReviewDisplay.DataBind();
+        }
+
+        protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            UpdateGVCategory(ddlCategory.SelectedValue);
+           
+        }
     }
 }

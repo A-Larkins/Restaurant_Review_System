@@ -63,9 +63,9 @@
             </div>
             <div class="form-group" >
                 <div class="d-flex justify-content-center">
-                    <asp:GridView ID="gvEditReviews" runat="server" AutoGenerateColumns="False"
+                    <asp:GridView ID="gvEditReviews" runat="server" CssClass ="table table-striped table-bordered" AutoGenerateColumns="False"
                         OnRowEditing="gvEditReviews_RowEditing" OnRowCancelingEdit="gvEditReviews_RowCancelingEdit"
-                        OnRowUpdating="gvEditReviews_RowUpdating" OnRowDeleting="gvEditReviews_RowDeleting">
+                        OnRowUpdating="gvEditReviews_RowUpdating" OnRowDeleting="gvEditReviews_RowDeleting" PageSize="1000">
                         <Columns>
 
                             <asp:BoundField DataField="Id" HeaderText="Review ID" ReadOnly="true"/>
