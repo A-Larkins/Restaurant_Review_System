@@ -73,7 +73,7 @@
                 <asp:TextBox ID="txtTime" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                <asp:Button ID="btnSubmit" runat="server" CssClass="form-control" Width="200px" Text="Submit" OnClick="btnSubmit_Click" />
             </div>
             <div class="form-group">
                 <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>

@@ -72,7 +72,7 @@
                 <asp:Label ID="lblDescription" runat="server" Text="Description:"></asp:Label>
                 <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
-            <asp:Button ID="btnAddRestaurant" runat="server" Text="Enter Restaurant" OnClick="btnAddRestaurant_Click" />
+            <asp:Button ID="btnAddRestaurant" runat="server" CssClass="form-control" Width="400px" Text="Enter Restaurant" OnClick="btnAddRestaurant_Click" />
             <div class="form-group">
                 <asp:Label ID="lblOutputMessage" runat="server" Visible="False"></asp:Label>
             </div>

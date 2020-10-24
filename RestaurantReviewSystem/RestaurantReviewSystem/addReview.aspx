@@ -56,15 +56,15 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" >
             
-            <div class="form-group">
+            <div class="form-group" >
                 <asp:Label ID="lblReviewer" runat="server" Text="Reviewer:"></asp:Label>
                 <asp:DropDownList ID="ddlReviewer" runat="server" CssClass="form-control" Width="200px" DataTextField="Username"></asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblRestaurant" runat="server" Text="Restaurant:"></asp:Label>
-                <asp:DropDownList ID="ddlRestaurant" runat="server" CssClass="form-control" Width="200px" DataTextField="Restaurant_Name"></asp:DropDownList>
+                <asp:DropDownList ID="ddlRestaurant" runat="server" CssClass="form-control " Width="200px" DataTextField="Restaurant_Name"></asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblCategory" runat="server" Text="Category:">  </asp:Label>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="form-group">
-                <asp:Button ID="btnSubmit" runat="server" Text="Enter Review" OnClick="btnSubmit_Click" />
+                <asp:Button ID="btnSubmit" runat="server" CssClass="form-control" Width="400px" Text="Enter Review" OnClick="btnSubmit_Click" />
             </div>
             <div class="form-group">
                 <asp:Label ID="lblOutputMessage" runat="server" Visible="False"></asp:Label>

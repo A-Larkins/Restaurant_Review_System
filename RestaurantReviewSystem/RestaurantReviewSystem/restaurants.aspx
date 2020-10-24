@@ -61,7 +61,9 @@
                 <asp:BoundField DataField="Restaurant_Name" HeaderText="Name" />
                 <asp:BoundField DataField="Description" HeaderText="Description" />
                 <asp:BoundField DataField="Category" HeaderText="Category" />
-                <asp:BoundField HeaderText="Image" />
+                <asp:ImageField DataImageUrlField="Image" HeaderText="Image">
+                    <ControlStyle Height="150px" Width="280px"  />
+                </asp:ImageField>
                 <asp:BoundField DataField="Representative" HeaderText="Representative" />
             </Columns>
 

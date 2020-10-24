@@ -58,7 +58,7 @@
         <div class="container">
             <div class="form-group" >
                 <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnEditReviews" runat="server" Text="Edit Your Reviews" OnClick="btnEditReviews_Click" />
+                    <asp:Button ID="btnEditReviews" runat="server" CssClass="form-control" Width="400px" Text="Edit Your Reviews" OnClick="btnEditReviews_Click" />
                 </div>
             </div>
             <div class="form-group" >
