@@ -56,6 +56,41 @@
             </div>
         </div>
 
+        <div class="container">
+            <div class="form-inline justify-content-center" >
+                <div class="form-group">
+                    <asp:Button ID="btnFilterByCategory" runat="server" CssClass="form-control" Width="200px" Text="Filter By Category" OnClick="btnFilterByCategory_Click" />
+                </div>
+               
+                <div class="form-group">
+                    &nbsp;&nbsp;<asp:Button ID="btnDisplayAll" runat="server" CssClass="form-control" Width="200px" Text="Display All" OnClick="btnDisplayAll_Click"  />
+                </div>
+            </div>
+            <div class="form-group"></div>
+        </div>
+
+        <div class="container">
+            <div class="form-inline justify-content-center" >
+                <div class="form-group">
+                    <asp:Label ID="lblCategory" runat="server" Text="Category:" Visible="False"></asp:Label>
+                    &nbsp;&nbsp;<asp:DropDownList ID="ddlCategory" AutoPostBack="True" runat="server" class="form-control" DataTextField="Category" Visible="False" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
+                    </asp:DropDownList>
+                </div>
+            </div>
+        </div>
+
+
+        <p></p>
+
+
+         <div class="container" >
+            <div class="d-flex justify-content-center">
+                <asp:Label ID="lblAllRestaurants" runat="server" Text="">
+                    <h3>All Restaurants</h3>
+                </asp:Label>
+            </div>
+        </div>
+
        
 
         <asp:GridView ID="gvRestaurantDisplay"  runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False">
