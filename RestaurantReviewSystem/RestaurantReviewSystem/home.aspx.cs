@@ -76,6 +76,9 @@ namespace RestaurantReviewSystem
             DataSet CategoryDS = objDB.GetDataSetUsingCmdObj(objCommand);
             ddlCategory2.DataSource = CategoryDS;
             ddlCategory2.DataBind();
+
+            
+
         }
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
@@ -89,6 +92,27 @@ namespace RestaurantReviewSystem
             objCommand.Parameters.Clear();
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "GetReviews";
+
+            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            gvReviewDisplay.DataSource = myDS;
+            gvReviewDisplay.DataBind();
+        }
+
+        protected void UpdateGVCategory2(String category1, String category2)
+        {
+            objCommand.Parameters.Clear();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetCategoryDisplay2";
+
+            SqlParameter inputParameter = new SqlParameter("@Category", category1);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@Category2", category2);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(inputParameter);
 
             DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
             gvReviewDisplay.DataSource = myDS;
@@ -118,6 +142,12 @@ namespace RestaurantReviewSystem
 
             UpdateGVCategory(ddlCategory.SelectedValue);
            
+        }
+
+        protected void ddlCategory2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            objCommand.Parameters.Clear();
+            UpdateGVCategory2(ddlCategory.SelectedValue, ddlCategory2.SelectedValue);
         }
     }
 }

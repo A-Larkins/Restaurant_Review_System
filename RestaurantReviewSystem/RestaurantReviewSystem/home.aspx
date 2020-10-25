@@ -78,7 +78,7 @@
                 </div>
                 <div class="form-group">
                     &nbsp;&nbsp;<asp:Label ID="lblCategory2" runat="server" Text="Category:" Visible="False"></asp:Label>
-                    &nbsp;&nbsp;<asp:DropDownList ID="ddlCategory2" runat="server" class="form-control" DataTextField="Category" Visible="False">
+                    &nbsp;&nbsp;<asp:DropDownList ID="ddlCategory2" AutoPostBack="True" runat="server" class="form-control" DataTextField="Category" Visible="False" OnSelectedIndexChanged="ddlCategory2_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
                
