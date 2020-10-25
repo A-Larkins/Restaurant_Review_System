@@ -86,6 +86,33 @@ namespace RestaurantReviewSystem
             }
         }
 
+        protected void btnViewReservations_Click(object sender, EventArgs e)
+        {
+            lblReservations.Visible = true;
+            lblReservations.Text = "Reservations For Your Restaurant:";
 
+            if (Session["userType"] == null)
+            {
+                lblMessage.Visible = true;
+                lblMessage.Text = "You have to login to view your reservations!";
+            }
+            else if (Session["userType"].ToString() == "Representative")
+            {
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "GetReservations";
+                objCommand.Parameters.AddWithValue("@Rep", Session["username"].ToString());
+                objDB.DoUpdateUsingCmdObj(objCommand);
+                DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+                gvReservations.DataSource = myDS;
+                gvReservations.DataBind();
+
+            }
+            else
+            {
+                lblMessage.Visible = true;
+                lblMessage.Text = "You have to login to view your reservations!";
+            }
+
+        }
     }
 }

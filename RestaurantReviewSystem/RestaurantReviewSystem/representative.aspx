@@ -56,26 +56,40 @@
         </div>
 
         <div class="container">
-            <div class ="form-group">
-                <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnAddRepresentative" runat="server" CssClass="form-control" Width="400px"  Text="Add yourself to a restaurant." OnClick="btnAddRepresentative_Click" />
+
+            <div class="form-inline justify-content-center" >
+
+                <div class ="form-group">
+                    <div class="d-flex justify-content-center">
+                        <asp:Button ID="btnAddRepresentative" runat="server" CssClass="form-control" Width="400px"  Text="Add yourself to a restaurant" OnClick="btnAddRepresentative_Click" />
+                    </div>
+                </div>
+
+                <div class ="form-group">
+                    <div class="d-flex justify-content-center">
+                        <asp:DropDownList ID="ddlRestaurant" runat="server" CssClass="form-control" Width="200px" DataTextField="Restaurant_Name" Visible="False"></asp:DropDownList>
+
+                    </div>
+                </div>        
+                <div class ="form-group">
+                    <div class="d-flex justify-content-center">
+                        <asp:Button ID="btnSubmit" runat="server" CssClass="form-control" Width="100px" Text="Submit" Visible="False" OnClick="btnSubmit_Click" />
+                    </div>
                 </div>
             </div>
-            
-            <div class ="form-group">
-                <div class="d-flex justify-content-center">
-                    <asp:DropDownList ID="ddlRestaurant" runat="server" CssClass="form-control" Width="200px" DataTextField="Restaurant_Name" Visible="False"></asp:DropDownList>
 
-                </div>
-            </div>        
+            <p></p>
+
+
             <div class ="form-group">
                 <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnSubmit" runat="server" CssClass="form-control" Width="100px" Text="Submit" Visible="False" OnClick="btnSubmit_Click" />
+                    <asp:Button ID="btnDeleteRepresentative" runat="server" CssClass="form-control" Width="400px" Text="Remove yourself from a restaurant" OnClick="btnRemoveRepresentative_Click" />
                 </div>
-            </div> 
+            </div>            
+
             <div class ="form-group">
                 <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnDeleteRepresentative" runat="server" CssClass="form-control" Width="400px" Text="Remove yourself from a restaurant." OnClick="btnRemoveRepresentative_Click" />
+                    <asp:Button ID="btnViewReservations" runat="server" CssClass="form-control" Width="400px" Text="View Reservations" OnClick="btnViewReservations_Click"  />
                 </div>
             </div>
 
@@ -84,6 +98,29 @@
                     <asp:Label ID="lblMessage" runat="server" Visible="False"></asp:Label>
                 </div>
             </div>
+
+            <div class="form-group"></div>
+
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:Label ID="lblReservations" runat="server" Visible="False"></asp:Label>
+                </div>
+            </div>
+            <asp:GridView ID="gvReservations"  runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False">
+            <Columns>
+                
+                <asp:BoundField DataField="Restaurant_Name" HeaderText="Your Restaurant" />
+                <asp:BoundField DataField="Name" HeaderText="Guest Name" />
+                <asp:BoundField DataField="Date" HeaderText="Date" />
+                <asp:BoundField DataField="Time" HeaderText="Time" />
+                
+            </Columns>
+
+        </asp:GridView>
+
+
+
+
         </div>
 
 
