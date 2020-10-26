@@ -76,8 +76,8 @@
                             <asp:BoundField DataField="Price_Rating" HeaderText="Price Rating" />
                             <asp:BoundField DataField="Comment" HeaderText="Comment" />
 
-                            <asp:CommandField ButtonType="Button" HeaderText="Edit" ShowEditButton="True" />
-                            <asp:CommandField ButtonType="Button" HeaderText="Delete" ShowDeleteButton="True" />
+                            <asp:CommandField ButtonType="Button" HeaderText="Edit" ControlStyle-CssClass="form-control" ShowEditButton="True" />
+                            <asp:CommandField ButtonType="Button" HeaderText="Delete" ControlStyle-CssClass="form-control" ShowDeleteButton="True" />
 
                         </Columns>
                     </asp:GridView>

@@ -95,6 +95,12 @@
 
             <div class ="form-group">
                 <div class="d-flex justify-content-center">
+                    <asp:Button ID="btnEditRestaurant" runat="server" CssClass="form-control" Width="400px" Text="Edit Your Restaurant" OnClick="btnEditRestaurant_Click" />
+                </div>
+            </div>
+
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
                     <asp:Label ID="lblMessage" runat="server" Visible="False"></asp:Label>
                 </div>
             </div>
@@ -106,6 +112,31 @@
                     <asp:Label ID="lblReservations" runat="server" Visible="False"></asp:Label>
                 </div>
             </div>
+
+            <asp:GridView ID="gvEditRestaurant"  runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False" Visible="False" OnRowCancelingEdit="gvEditRestaurant_RowCancelingEdit" OnRowEditing="gvEditRestaurant_RowEditing" OnRowUpdating="gvEditRestaurant_RowUpdating">
+            <Columns>
+                
+                <asp:BoundField DataField="Restaurant_Name" HeaderText="Restaurant Name" ReadOnly="true" />
+                <asp:BoundField DataField="Description" HeaderText="Description" />
+                <asp:BoundField DataField="Category" HeaderText="Category" />
+                <asp:ImageField DataImageUrlField="Image" HeaderText="Image">
+                    <ControlStyle Height="150px" Width="280px"  />
+
+                </asp:ImageField>
+                <asp:CommandField ButtonType="Button" ControlStyle-CssClass="form-control" HeaderText="Edit" ShowEditButton="True" >
+                    <ControlStyle CssClass="form-control"></ControlStyle>
+                </asp:CommandField>
+            </Columns>
+
+            </asp:GridView>
+
+            <div class ="form-group">
+                <div class="d-flex justify-content-center">
+                    <asp:Label ID="lblUpdateMessage" runat="server" Visible="False"></asp:Label>
+                </div>
+            </div>
+
+
             <asp:GridView ID="gvReservations"  runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False">
             <Columns>
                 
@@ -116,7 +147,7 @@
                 
             </Columns>
 
-        </asp:GridView>
+            </asp:GridView>
 
 
 

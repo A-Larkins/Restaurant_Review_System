@@ -114,5 +114,88 @@ namespace RestaurantReviewSystem
             }
 
         }
+
+        protected void BindRestaurantGV()
+        {
+            objCommand.Parameters.Clear();
+            
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetRestaurant";
+            objCommand.Parameters.AddWithValue("@Rep", Session["username"].ToString());
+            
+            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            gvEditRestaurant.DataSource = myDS;
+            gvEditRestaurant.DataBind();
+        }
+
+        protected void btnEditRestaurant_Click(object sender, EventArgs e)
+        {
+            gvEditRestaurant.Visible = true;
+            if (Session["userType"] == null)
+            {
+                lblMessage.Visible = true;
+                lblMessage.Text = "You have to login to edit your restaurants!";
+            }
+            else if (Session["userType"].ToString() == "Representative")
+            {
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "GetRestaurant";
+                objCommand.Parameters.AddWithValue("@Rep", Session["username"].ToString());
+                objDB.DoUpdateUsingCmdObj(objCommand);
+                DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+                gvEditRestaurant.DataSource = myDS;
+                gvEditRestaurant.DataBind();
+
+            }
+            else
+            {
+                lblMessage.Visible = true;
+                lblMessage.Text = "You have to login to edit your restaurants!";
+            }
+        }
+
+        protected void gvEditRestaurant_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvEditRestaurant.EditIndex = e.NewEditIndex;
+            BindRestaurantGV();
+        }
+
+        protected void gvEditRestaurant_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvEditRestaurant.EditIndex = -1;
+            BindRestaurantGV();
+        }
+
+        protected void gvEditRestaurant_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+            lblMessage.Text = "You have edited your restaurant!";
+            int rowIndex = e.RowIndex;
+            
+            String restaurantName = gvEditRestaurant.Rows[rowIndex].Cells[0].Text;
+
+            TextBox TBox;
+
+            TBox = (TextBox)gvEditRestaurant.Rows[rowIndex].Cells[1].Controls[0];
+            String description = TBox.Text;
+            TBox = (TextBox)gvEditRestaurant.Rows[rowIndex].Cells[2].Controls[0];
+            String category = TBox.Text;
+            TBox = (TextBox)gvEditRestaurant.Rows[rowIndex].Cells[3].Controls[0];
+            String image = TBox.Text;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "UpdateRestaurant";
+            objCommand.Parameters.AddWithValue("@RestaurantName", restaurantName);
+            objCommand.Parameters.AddWithValue("@Description", description);
+            objCommand.Parameters.AddWithValue("@Category", category);
+            objCommand.Parameters.AddWithValue("@Image", image);
+            objDB.DoUpdateUsingCmdObj(objCommand);
+
+            gvEditRestaurant.EditIndex = -1;
+
+            BindRestaurantGV();
+        }
+
+        
     }
 }

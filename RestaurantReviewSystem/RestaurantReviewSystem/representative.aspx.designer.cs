@@ -67,6 +67,15 @@ namespace RestaurantReviewSystem {
         protected global::System.Web.UI.WebControls.Button btnViewReservations;
         
         /// <summary>
+        /// btnEditRestaurant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditRestaurant;
+        
+        /// <summary>
         /// lblMessage control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,24 @@ namespace RestaurantReviewSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReservations;
+        
+        /// <summary>
+        /// gvEditRestaurant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvEditRestaurant;
+        
+        /// <summary>
+        /// lblUpdateMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUpdateMessage;
         
         /// <summary>
         /// gvReservations control.
