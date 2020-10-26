@@ -35,6 +35,9 @@ namespace RestaurantReviewSystem
 
         protected void btnFilterByCategory_Click(object sender, EventArgs e)
         {
+
+            gvRestaurantAverages.Visible = false;
+            gvReviewDisplay.Visible = true;
             objCommand.Parameters.Clear();
 
             btnAddAnotherCategory.Visible = true;

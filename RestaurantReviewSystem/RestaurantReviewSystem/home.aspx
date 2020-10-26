@@ -116,10 +116,10 @@
         <asp:GridView ID="gvRestaurantAverages"  AutoPostBack="True" runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False" Visible="False">
             <Columns>
                 <asp:BoundField DataField="Restaurant_Name" HeaderText="Restaurant" />
-                <asp:BoundField DataField="Food_Rating" HeaderText="Food Rating" />
-                <asp:BoundField DataField="Service_Rating" HeaderText="Service Rating" />
-                <asp:BoundField DataField="Atmosphere_Rating" HeaderText="Atmosphere Rating" />
-                <asp:BoundField DataField="Price_Rating" HeaderText="Price Rating" />
+                <asp:BoundField DataField="Food_Rating" HeaderText="Food Rating" DataFormatString="{0:0.00}" />
+                <asp:BoundField DataField="Service_Rating" HeaderText="Service Rating" DataFormatString="{0:0.00}" />
+                <asp:BoundField DataField="Atmosphere_Rating" HeaderText="Atmosphere Rating" DataFormatString="{0:0.00}" />
+                <asp:BoundField DataField="Price_Rating" HeaderText="Price Rating" DataFormatString="{0:0.00}" />
             </Columns>
 
         </asp:GridView>
