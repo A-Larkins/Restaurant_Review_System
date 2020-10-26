@@ -83,6 +83,9 @@ namespace RestaurantReviewSystem
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
+            btnAddAnotherCategory.Visible = false;
+            gvRestaurantAverages.Visible = false;
+            gvReviewDisplay.Visible = true;
             ddlCategory.Visible = false;
             ddlCategory2.Visible = false;
             lblCategory.Visible = false;
@@ -148,6 +151,30 @@ namespace RestaurantReviewSystem
         {
             objCommand.Parameters.Clear();
             UpdateGVCategory2(ddlCategory.SelectedValue, ddlCategory2.SelectedValue);
+        }
+
+        protected void btnDisplayRestaurantAverages_Click(object sender, EventArgs e)
+        {
+            btnAddAnotherCategory.Visible = false;
+            lblCategory.Visible = false;
+            lblCategory2.Visible = false;
+            lblAllReviews.Visible = false;
+            ddlCategory.Visible = false;
+            ddlCategory2.Visible = false;
+            objCommand.Parameters.Clear();
+
+            gvRestaurantAverages.Visible = true;
+            gvReviewDisplay.Visible = false;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "GetRestaurantAverages";
+           
+
+            DataSet RestaurantDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            gvRestaurantAverages.DataSource = RestaurantDS;
+            gvRestaurantAverages.DataBind();
+
+
         }
     }
 }

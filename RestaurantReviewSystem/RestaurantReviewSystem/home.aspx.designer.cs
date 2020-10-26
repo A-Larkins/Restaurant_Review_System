@@ -49,6 +49,15 @@ namespace RestaurantReviewSystem {
         protected global::System.Web.UI.WebControls.Button btnDisplayAll;
         
         /// <summary>
+        /// btnDisplayRestaurantAverages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDisplayRestaurantAverages;
+        
+        /// <summary>
         /// lblCategory control.
         /// </summary>
         /// <remarks>
@@ -101,5 +110,14 @@ namespace RestaurantReviewSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvReviewDisplay;
+        
+        /// <summary>
+        /// gvRestaurantAverages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvRestaurantAverages;
     }
 }

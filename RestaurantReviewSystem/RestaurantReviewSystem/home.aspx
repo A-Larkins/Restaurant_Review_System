@@ -57,13 +57,16 @@
         <div class="container">
             <div class="form-inline justify-content-center" >
                 <div class="form-group">
-                    <asp:Button ID="btnFilterByCategory" runat="server" CssClass="form-control" Width="200px" Text="Filter By Category" OnClick="btnFilterByCategory_Click" />
+                    <asp:Button ID="btnFilterByCategory" runat="server" CssClass="form-control" Width="300px" Text="Filter By Category" OnClick="btnFilterByCategory_Click" />
                 </div>
                <div class="form-group">
-                    &nbsp;&nbsp;<asp:Button ID="btnAddAnotherCategory" runat="server" CssClass="form-control" Width="200px" Text="Add another Category" OnClick="btnAddAnotherCategory_Click" Visible="False" />
+                    &nbsp;&nbsp;<asp:Button ID="btnAddAnotherCategory" runat="server" CssClass="form-control" Width="300px" Text="Add another Category" OnClick="btnAddAnotherCategory_Click" Visible="False" />
                 </div>
                 <div class="form-group">
-                    &nbsp;&nbsp;<asp:Button ID="btnDisplayAll" runat="server" CssClass="form-control" Width="200px" Text="Display All" OnClick="btnDisplayAll_Click"  />
+                    &nbsp;&nbsp;<asp:Button ID="btnDisplayAll" runat="server" CssClass="form-control" Width="300px" Text="Display All" OnClick="btnDisplayAll_Click"  />
+                </div>
+                <div class="form-group">
+                    &nbsp;&nbsp;<asp:Button ID="btnDisplayRestaurantAverages" runat="server" CssClass="form-control" Width="300px" Text="Display Restaurant Averages" OnClick="btnDisplayRestaurantAverages_Click"   />
                 </div>
             </div>
             <div class="form-group"></div>
@@ -106,6 +109,17 @@
                 <asp:BoundField DataField="Atmosphere_Rating" HeaderText="Atmosphere Rating" />
                 <asp:BoundField DataField="Price_Rating" HeaderText="Price Rating" />
                 <asp:BoundField DataField="Comment" HeaderText="Comment" />
+            </Columns>
+
+        </asp:GridView>
+
+        <asp:GridView ID="gvRestaurantAverages"  AutoPostBack="True" runat="server" CssClass ="table table-striped table-bordered" style="width:90%; margin:auto;" AutoGenerateColumns="False" Visible="False">
+            <Columns>
+                <asp:BoundField DataField="Restaurant_Name" HeaderText="Restaurant" />
+                <asp:BoundField DataField="Food_Rating" HeaderText="Food Rating" />
+                <asp:BoundField DataField="Service_Rating" HeaderText="Service Rating" />
+                <asp:BoundField DataField="Atmosphere_Rating" HeaderText="Atmosphere Rating" />
+                <asp:BoundField DataField="Price_Rating" HeaderText="Price Rating" />
             </Columns>
 
         </asp:GridView>
