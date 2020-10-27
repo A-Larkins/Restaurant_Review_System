@@ -99,7 +99,7 @@
                 <asp:BoundField DataField="Description" HeaderText="Description" />
                 <asp:BoundField DataField="Category" HeaderText="Category" />
                 <asp:ImageField DataImageUrlField="Image" HeaderText="Image">
-                    <ControlStyle Height="150px" Width="280px"  />
+                    <ControlStyle Height="180px" Width="300px"  />
                 </asp:ImageField>
                 <asp:BoundField DataField="Representative" HeaderText="Representative" />
             </Columns>

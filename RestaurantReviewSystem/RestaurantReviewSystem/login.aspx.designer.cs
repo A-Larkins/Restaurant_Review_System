@@ -76,6 +76,15 @@ namespace RestaurantReviewSystem {
         protected global::System.Web.UI.WebControls.Label lblUsernameMessage;
         
         /// <summary>
+        /// lblCreateNewUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateNewUser;
+        
+        /// <summary>
         /// lblNewUserType control.
         /// </summary>
         /// <remarks>

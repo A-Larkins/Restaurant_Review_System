@@ -73,7 +73,7 @@
                     &nbsp;<asp:Button ID="btnLogin" runat="server" CssClass="form-control" Width="150px" Text="Login" OnClick="btnLogin_Click" />
                 </div>
                 <div class="form-group">
-                    &nbsp;<asp:Label ID="lblUsernameMessage" runat="server" Visible="False"></asp:Label>
+                    &nbsp;<asp:Label ID="lblUsernameMessage" runat="server" CssClass="form-control" Width="400px" Visible="False"></asp:Label>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
 
         <div class="container" style="text-align:center">
             <div class="jumbotron" style="align-content: center">
-                <h1>..Or Create New User</h1>
+                <asp:Label ID="lblCreateNewUser" runat="server" Text="" Font-Bold="False"><h1>..Or Create New User</h1></asp:Label>
             </div>
         </div>
 

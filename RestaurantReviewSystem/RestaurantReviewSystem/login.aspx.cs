@@ -45,6 +45,7 @@ namespace RestaurantReviewSystem
 
                 lblNewUsernameMessage.Visible = true;
                 lblNewUsernameMessage.Text = "A new user has been added as type " + newUserType;
+                HideNewUser();
 
             }
             catch (Exception ex)
@@ -82,11 +83,9 @@ namespace RestaurantReviewSystem
                 {
                     Session["username"] = txtUsername.Text;
                     Session["userType"] = ddlLoginType.SelectedValue;
-                    //Session["username"] = objDS.Tables[0].Rows[0][0].ToString();
-                    //Session["userType"] = objDS.Tables[0].Rows[0][1].ToString();
                     lblUsernameMessage.Visible = true;
-                    lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString();                }
-                
+                    lblUsernameMessage.Text = "Logged in as: " + objDS.Tables[0].Rows[0][0].ToString() + ", Type: Reviewer";                }
+                    HideLogin();
                 }
             else if (userType == "Representative")
             {
@@ -108,7 +107,8 @@ namespace RestaurantReviewSystem
                     Session["username"] = txtUsername.Text;
                     Session["userType"] = ddlLoginType.SelectedValue;
                     lblUsernameMessage.Visible = true;
-                    lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString();
+                    lblUsernameMessage.Text = "Logged in as " + objDS.Tables[0].Rows[0][0].ToString() + ", Type: Representative";
+                    HideLogin();
                 }
 
                 
@@ -116,6 +116,34 @@ namespace RestaurantReviewSystem
             // put text box back to blank after  login
             txtUsername.Text = "";
 
+        }
+
+        protected void HideLogin()
+        {
+            lblLoginType.Visible = false;
+            ddlLoginType.Visible = false;
+            lblUsername.Visible = false;
+            txtUsername.Visible = false;
+            btnLogin.Visible = false;
+
+            lblNewUserType.Visible = false;
+            ddlNewUserType.Visible = false;
+            lblNewUsername.Visible = false;
+            txtNewUsername.Visible = false;
+
+            btnNewUsername.Visible = false;
+            lblCreateNewUser.Visible = false;
+            
+        }
+
+        protected void HideNewUser()
+        {
+            lblCreateNewUser.Visible = false;
+            btnNewUsername.Visible = false;
+            lblNewUsername.Visible = false;
+            lblNewUserType.Visible = false;
+            ddlNewUserType.Visible = false;
+            txtNewUsername.Visible = false;
         }
 
     }
