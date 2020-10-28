@@ -29,6 +29,22 @@ namespace RestaurantReviewSystem
             }
         }
 
+        protected void WrapUp()
+        {
+            lblOutputMessage.Visible = true;
+            lblOutputMessage.Text = "Successfully entered the restaurant!";
+            btnAddRestaurant.Visible = false;
+            lblName.Visible = false;
+            txtRestaurantName.Visible = false;
+            lblCategory.Visible = false;
+            ddlCategory.Visible = false;
+            lblImage.Visible = false;
+            txtImage.Visible = false;
+            lblDescription.Visible = false;
+            txtDescription.Visible = false;
+            
+        }
+
         protected void btnAddRestaurant_Click(object sender, EventArgs e)
         {
             try
@@ -62,6 +78,8 @@ namespace RestaurantReviewSystem
                 objCommand.Parameters.Add(inputParameter);
 
                 objDB.DoUpdateUsingCmdObj(objCommand);
+
+                WrapUp();
 
             }
             catch (Exception ex)

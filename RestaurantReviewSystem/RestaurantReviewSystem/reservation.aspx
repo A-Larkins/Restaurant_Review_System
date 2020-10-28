@@ -15,6 +15,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
     
     <title>Reservation</title>
+
+   
+
 </head>
 <body>
     <form id="frmReservation" runat="server">
@@ -62,21 +65,34 @@
             </div>
             <div class="form-group">
                 <asp:Label ID="lblName" runat="server" Text="Your Name:"></asp:Label>
-                <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
+                <asp:TextBox ID="txtName" runat="server" required="true" CssClass="form-control" Width="200px"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblDate" runat="server" Text="Enter Date In The Form MM/DD/YYYY:"></asp:Label>
-                <asp:TextBox ID="txtDate" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
-            </div>
+                <asp:TextBox ID="txtDate" runat="server" required="true" CssClass="form-control" Width="200px"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="rev1" runat="server" ControlToValidate="txtDate"
+                    ForeColor="Red" ValidationExpression="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d"
+                    Display = "Dynamic" ErrorMessage = "Enter in form MM/DD/YYYY"/>
+                <asp:RequiredFieldValidator ID="rfv1" runat="server" ControlToValidate="txtDate"
+                    ForeColor="Red" Display = "Dynamic" ErrorMessage = "Enter in form MM/DD/YYYY" />
+                </div>
             <div class="form-group">
-                <asp:Label ID="lblTime" runat="server" Text="Enter Time In The Form 12:00PM:"></asp:Label>
-                <asp:TextBox ID="txtTime" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
+                <asp:Label ID="lblTime" runat="server" Text="Enter Time In The Form 12:00 PM:"></asp:Label>
+                <asp:TextBox ID="txtTime" runat="server" required="true" CssClass="form-control" Width="200px"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="rev2" runat="server" ControlToValidate="txtTime"
+                    ForeColor="Red" ValidationExpression="((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))"
+                    Display = "Dynamic" ErrorMessage = "Enter in form 12:00 PM"/>
+                <asp:RequiredFieldValidator ID="rfv2" runat="server" ControlToValidate="txtTime"
+                    ForeColor="Red" Display = "Dynamic" ErrorMessage = "Enter in form 12:00 PM" />
             </div>
             <div class="form-group">
                 <asp:Button ID="btnSubmit" runat="server" CssClass="form-control" Width="200px" Text="Submit" OnClick="btnSubmit_Click" />
             </div>
             <div class="form-group">
-                <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+                <div class="form-inline justify-content-center" >
+
+                    <asp:Label ID="lblMessage" runat="server" Visible="false" CssClass="form-control" Text=""></asp:Label>
+                </div>
             </div>
         </div>
 

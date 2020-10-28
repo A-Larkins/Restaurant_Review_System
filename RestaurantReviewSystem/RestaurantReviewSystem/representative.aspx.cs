@@ -88,9 +88,6 @@ namespace RestaurantReviewSystem
 
         protected void btnViewReservations_Click(object sender, EventArgs e)
         {
-            lblReservations.Visible = true;
-            lblReservations.Text = "Reservations For Your Restaurant:";
-
             if (Session["userType"] == null)
             {
                 lblMessage.Visible = true;
@@ -98,6 +95,8 @@ namespace RestaurantReviewSystem
             }
             else if (Session["userType"].ToString() == "Representative")
             {
+                lblReservations.Visible = true;
+                lblReservations.Text = "Reservations For Your Restaurant:";
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "GetReservations";
                 objCommand.Parameters.AddWithValue("@Rep", Session["username"].ToString());

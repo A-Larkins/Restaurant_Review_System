@@ -31,11 +31,11 @@ namespace RestaurantReviewSystem
                 DataSet RestaurantDS = objDB.GetDataSetUsingCmdObj(objCommand);
                 ddlRestaurant.DataSource = RestaurantDS;
                 ddlRestaurant.DataBind();
-
-
+                
 
             }
         }
+
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -44,6 +44,7 @@ namespace RestaurantReviewSystem
                 String reviewer = ddlReviewer.SelectedValue;
                 String restaurant = ddlRestaurant.SelectedValue;
                 String category = txtCategory.Text;
+
                 float foodRating = int.Parse(txtFoodRating.Text);
                 float serviceRating = int.Parse(txtServiceRating.Text);
                 float atmosphereRating = int.Parse(txtAtmosphereRating.Text);
@@ -103,5 +104,7 @@ namespace RestaurantReviewSystem
             }
 
         }
+        
+
     }
 }

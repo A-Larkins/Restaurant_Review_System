@@ -57,7 +57,7 @@
         <div class="container">
             <div class="form-group">
                 <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label>
-                <asp:TextBox ID="txtRestaurantName" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtRestaurantName" runat="server" required="true" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblCategory" runat="server" Text="Category:"></asp:Label>
@@ -70,11 +70,13 @@
             </div>
             <div class="form-group">
                 <asp:Label ID="lblDescription" runat="server" Text="Description:"></asp:Label>
-                <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtDescription" runat="server" required="true" CssClass="form-control"></asp:TextBox>
             </div>
             <asp:Button ID="btnAddRestaurant" runat="server" CssClass="form-control" Width="400px" Text="Enter Restaurant" OnClick="btnAddRestaurant_Click" />
             <div class="form-group">
-                <asp:Label ID="lblOutputMessage" runat="server" Visible="False"></asp:Label>
+                <div class="form-inline justify-content-center" >
+                    <asp:Label ID="lblOutputMessage" runat="server" Visible="False" CssClass="form-control"></asp:Label>
+                </div>
             </div>
         </div>
 

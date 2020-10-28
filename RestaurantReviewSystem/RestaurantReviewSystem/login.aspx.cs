@@ -74,7 +74,7 @@ namespace RestaurantReviewSystem
 
                 DataSet objDS = objDB.GetDataSetUsingCmdObj(objCommand);
 
-                if (objDS == null || objDS.Tables.Count == 0 || objDS.Tables[0].Rows.Count == 0)
+                if (objDS == null || objDS.Tables.Count == 0 || objDS.Tables[0].Rows.Count == 0 )
                 {
                     lblUsernameMessage.Visible = true;
                     lblUsernameMessage.Text = "Username is not in database.";

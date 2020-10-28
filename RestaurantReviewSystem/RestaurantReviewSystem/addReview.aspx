@@ -97,8 +97,11 @@
                 <asp:Button ID="btnSubmit" runat="server" CssClass="form-control" Width="400px" Text="Enter Review" OnClick="btnSubmit_Click" />
             </div>
             <div class="form-group">
-                <asp:Label ID="lblOutputMessage" runat="server" Visible="False"></asp:Label>
-            </div>
+                <div class="form-inline justify-content-center" >
+
+                    <asp:Label ID="lblOutputMessage" runat="server" CssClass="form-control" Visible="False"></asp:Label>
+                </div> 
+           </div>
 
 
         </div>
